@@ -44,7 +44,6 @@ const nextConfig: NextConfig = {
       { source: "/ahorro.html", destination: "/calculadora", permanent: true },
       { source: "/faq.html", destination: "/ayuda/faq", permanent: true },
       { source: "/envios.html", destination: "/ayuda/envios", permanent: true },
-      { source: "/:path*.html", destination: "/:path*", permanent: true },
     ];
   },
 };

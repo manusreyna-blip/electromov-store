@@ -1,5 +1,6 @@
 import { desc, eq } from "drizzle-orm";
 import { db, hasDatabase, schema } from "@/lib/db";
+import { ensureSchema } from "@/lib/db/ensure-schema";
 import { DEFAULT_SETTINGS, PRODUCTS, VEHICLES, CATEGORIES } from "@/data/catalog";
 import type { Order, Product, StoreSettings, Vehicle, Category } from "@/lib/types";
 
@@ -123,9 +124,14 @@ export async function deleteProduct(id: string): Promise<void> {
   await db.delete(schema.products).where(eq(schema.products.id, id));
 }
 
-/** Copia el catálogo semilla a la base. Se ejecuta desde el panel la primera vez. */
+/**
+ * Crea las tablas si hacen falta y copia el catálogo semilla a la base.
+ * Se ejecuta desde el panel la primera vez, así conectar la base no exige
+ * correr migraciones desde una terminal.
+ */
 export async function seedDatabase(): Promise<number> {
   if (!db) return 0;
+  await ensureSchema();
   for (const p of PRODUCTS) await upsertProduct(p);
   await saveSettings(DEFAULT_SETTINGS);
   return PRODUCTS.length;
