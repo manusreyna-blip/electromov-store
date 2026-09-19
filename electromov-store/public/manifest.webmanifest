@@ -1,0 +1,13 @@
+{
+  "name": "ElectroMov — Carga para autos eléctricos",
+  "short_name": "ElectroMov",
+  "description": "Wallbox, cables Tipo 2 y cargadores portátiles con garantía local en Argentina.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1f17",
+  "lang": "es-AR",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

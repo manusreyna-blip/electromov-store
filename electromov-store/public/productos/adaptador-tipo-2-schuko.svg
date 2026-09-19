@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Adaptador Tipo 2 a Schuko">
+<defs><filter id="s4" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#0b1f17" flood-opacity="0.22"/></filter></defs>
+<g filter="url(#s4)">
+<rect x="70" y="150" width="120" height="100" rx="30" fill="#122c22"/>
+<circle cx="102" cy="180" r="9" fill="#4b7565"/><circle cx="130" cy="174" r="9" fill="#4b7565"/><circle cx="158" cy="180" r="9" fill="#4b7565"/>
+<circle cx="102" cy="210" r="9" fill="#4b7565"/><circle cx="130" cy="213" r="9" fill="#4b7565"/><circle cx="158" cy="210" r="9" fill="#4b7565"/>
+<circle cx="130" cy="194" r="7" fill="#21dd93"/>
+<rect x="176" y="176" width="70" height="48" rx="16" fill="#0b1f17"/>
+<rect x="232" y="164" width="98" height="72" rx="24" fill="#122c22"/>
+<circle cx="281" cy="200" r="30" fill="#0b1f17"/>
+<circle cx="269" cy="200" r="7" fill="#d7ff3e"/><circle cx="293" cy="200" r="7" fill="#d7ff3e"/>
+<rect x="276" y="166" width="10" height="7" rx="3" fill="#3d6555"/><rect x="276" y="227" width="10" height="7" rx="3" fill="#3d6555"/>
+</g>
+<g transform="translate(150 282)"><rect x="0" y="0" width="112" height="28" rx="14" fill="#e8fff5" stroke="#8ff9cd"/><text x="56" y="19" font-family="ui-sans-serif,system-ui" font-size="12" font-weight="700" fill="#00834f" text-anchor="middle">220 V · 3,5 kW</text></g>
+</svg>
