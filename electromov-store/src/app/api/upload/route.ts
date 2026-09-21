@@ -27,10 +27,15 @@ export async function POST(request: NextRequest) {
   const ext = file.name.split(".").pop() ?? "jpg";
   const filename = `productos/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
 
-  const blob = await put(filename, file, {
-    access: "public",
-    contentType: file.type,
-  });
-
-  return NextResponse.json({ url: blob.url });
+  try {
+    const blob = await put(filename, file, {
+      access: "public",
+      contentType: file.type,
+    });
+    return NextResponse.json({ url: blob.url });
+  } catch (err: unknown) {
+    const msg = err instanceof Error ? err.message : "Error al subir la imagen";
+    console.error("[upload] blob error:", err);
+    return NextResponse.json({ error: msg }, { status: 500 });
+  }
 }
