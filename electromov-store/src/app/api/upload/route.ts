@@ -31,6 +31,8 @@ export async function POST(request: NextRequest) {
     const blob = await put(filename, file, {
       access: "public",
       contentType: file.type,
+      token: process.env.electromovstore_public_READ_WRITE_TOKEN,
+      storeId: process.env.electromovstore_public_STORE_ID,
     });
     return NextResponse.json({ url: blob.url });
   } catch (err: unknown) {
