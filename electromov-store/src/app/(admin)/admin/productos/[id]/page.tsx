@@ -4,6 +4,7 @@ import { ArrowLeft, Trash2 } from "lucide-react";
 import { isAuthenticated } from "@/lib/auth";
 import { listProducts, listCategories } from "@/lib/repo";
 import { deleteProductAction, saveProductAction } from "@/app/(admin)/admin/actions";
+import { ImageUploader } from "@/components/admin/image-uploader";
 import type { Product } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
@@ -199,13 +200,15 @@ export default async function EditProductPage({ params }: { params: Promise<{ id
                 rows={6}
                 hint="Formato: Pregunta | Respuesta (se publican como FAQ estructurada para Google)"
               />
-              <Area
-                label="Imágenes"
-                name="images"
-                defaultValue={product.images.map((i) => `${i.url} | ${i.alt}`).join("\n")}
-                rows={3}
-                hint="Formato: /ruta-o-url.jpg | Texto alternativo. Una por línea, la primera es la principal."
-              />
+              <div>
+                <span className="text-[13px] font-semibold text-ink-800">Imágenes</span>
+                <div className="mt-1.5">
+                  <ImageUploader initial={product.images} />
+                </div>
+                <span className="mt-1 block text-[12.5px] text-sand-500">
+                  La primera imagen es la principal. Podés reordenarlas con las flechas.
+                </span>
+              </div>
             </div>
           </section>
 
